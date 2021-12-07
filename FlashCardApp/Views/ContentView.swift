@@ -10,28 +10,28 @@ import SwiftUI
 struct ContentView: View {
     
     //MARK: Stored Properties
-    var currentCard: Card = listOfCards.randomElement()!
-     
+    @State  var currentCard: Card = listOfCards.randomElement()!
+    
     
     //MARK: Commputed properties
     var body: some View {
         VStack(spacing: 25) {
-           
+            
             //Output
             Text(currentCard.question)
                 .font(.largeTitle)
             //Input
             Button(action: {
                 
-                print("Button was pressed")
+                currentCard = listOfCards.randomElement()!
             }, label: {
                 Text("Check")
             })
-            .buttonStyle(.bordered)
+                .buttonStyle(.bordered)
             
             //Output
-            Text(currrentCard.answer)
-                 .font(.title)
+            Text(currentCard.answer)
+                .font(.title)
             
             //Input
             Button(action: {
@@ -40,8 +40,8 @@ struct ContentView: View {
             }, label: {
                 Text("Check")
             })
-            .buttonStyle(.bordered)
-
+                .buttonStyle(.bordered)
+            
             
             Spacer()
         }
@@ -53,7 +53,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        ContentView()
+            ContentView()
         }
     }
 }
