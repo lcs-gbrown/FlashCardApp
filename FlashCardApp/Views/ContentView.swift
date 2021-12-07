@@ -11,7 +11,8 @@ struct ContentView: View {
     
     //MARK: Stored Properties
     @State  var currentCard: Card = listOfCards.randomElement()!
-    
+  //This controls whether the answer is visible
+    @State var isAnswerShwoing = false
     
     //MARK: Commputed properties
     var body: some View {
@@ -32,13 +33,15 @@ struct ContentView: View {
             //Output
             Text(currentCard.answer)
                 .font(.title)
+            //condition                   true   false
+                .opacity(isAnswerShwoing ? 1.0 : 0.0 )
             
             //Input
             Button(action: {
                 
                 print("Button was pressed")
             }, label: {
-                Text("Check")
+                Text("Another")
             })
                 .buttonStyle(.bordered)
             
