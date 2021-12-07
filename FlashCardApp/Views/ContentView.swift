@@ -17,9 +17,21 @@ struct ContentView: View {
                 
                 print("Button was pressed")
             }, label: {
-                Text("Checke")
+                Text("Check")
             })
             .buttonStyle(.bordered)
+            
+            Text("Mitochondria")
+                 .font(.title)
+            
+            Button(action: {
+                
+                print("Button was pressed")
+            }, label: {
+                Text("Check")
+            })
+            .buttonStyle(.bordered)
+
             
             Spacer()
         }
